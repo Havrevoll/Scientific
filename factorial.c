@@ -1,12 +1,12 @@
 #include <stdio.h>
 
-void factorial(int *seq, int perms)
+void factorial(int *seq, int perms, int n)
 {
-	int j,k,temp
+	int j,k,temp;
 		for (j = 0; j < n - perms; j++)
 		{
 			if (perms <n)
-				factorial(seq, perms+1);
+				factorial(seq, perms+1,n);
 
 			
 
@@ -27,7 +27,7 @@ void factorial(int *seq, int perms)
 			seq[i] = i+1;
 		}
 
-		factorial(seq, 0);
+		factorial(seq, 0,n);
 	}
 
 

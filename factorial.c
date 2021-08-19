@@ -2,8 +2,14 @@
 
 void factorial(int *seq, int perms)
 {
-	for (int i = 0; i < n - perms; i++)
+	int j,k,temp
+	for (j = 0; j < n - perms; j++)
 	{
+		factorial(seq, perms-1);
+			temp= seq[k];
+		for (k = 0; k < n - perms; k++)
+		{
+			
 
 	}
 
@@ -17,7 +23,7 @@ void main(int n)
 		seq[i] = i+1;
 	}
 
-	factorial(seq, n);
+	factorial(seq, 0);
 }
 
 

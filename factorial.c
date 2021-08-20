@@ -8,21 +8,21 @@ void factorial(int *seq, int perms)
 	int j,k,temp;
 	for (j = 0; j < n - perms; j++)
 	{
-		if (perms <n-1)
+		if (perms <n-2)
 			factorial(seq, perms+1);
+
+
+		temp= seq[0];
+		for (k = 0; k < n - perms-1; k++)
+			seq[k] = seq[k+1];
+
+		seq[n -perms-1]=temp;
 
 		for (k = 0; k < n; k++)
 		{
 			printf("%i ", seq[k]);
 		}
 		printf("\n");
-
-		temp= seq[0];
-		for (k = 0; k < n - perms-1; k++)
-			seq[k] = seq[k+1];
-
-		seq[n -perms-2]=temp;
-
 
 	}
 }

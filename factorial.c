@@ -8,7 +8,7 @@ void factorial(int *seq, int perms)
 	int j,k,temp;
 	for (j = 0; j < n - perms; j++)
 	{
-		if (perms <n-2)
+		if (n- perms > 2)
 			factorial(seq, perms+1);
 
 
@@ -17,13 +17,14 @@ void factorial(int *seq, int perms)
 			seq[k] = seq[k+1];
 
 		seq[n -perms-1]=temp;
-
-		for (k = 0; k < n; k++)
+		if (n-perms <= 2)
 		{
-			printf("%i ", seq[k]);
+			for (k = 0; k < n; k++)
+			{
+				printf("%i ", seq[k]);
+			}
+			printf("\n");
 		}
-		printf("\n");
-
 	}
 }
 int main(int argc, char **argv )

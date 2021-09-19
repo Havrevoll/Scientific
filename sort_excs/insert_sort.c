@@ -2,9 +2,16 @@
 #include <stdlib.h>
 
 # Dette er insert sort.
-int * insert(int* usortert)
+int * insert(int* usortert, int len)
 {
 
+	for (int i =1; i<len; i++)
+	{
+		for (int j= i; j >= 0; j--)
+		{
+if (u[j			1;
+		}
+	}
 }
 
 int main(int argc, char **argv) 

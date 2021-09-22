@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-# Dette er insert sort.
-int * insert(int* usortert, int len)
+// Dette er insert sort.
+void insert(int* u, int len)
 {
     int temp;
     for (int i =1; i<len; i++)

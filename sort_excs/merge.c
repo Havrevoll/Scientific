@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Dette er insert sort.
+// Dette er merge sort.
 void merge_sort(int* u, int p, int r)
 {
     if (p<r)
@@ -16,23 +16,36 @@ merge(u, p,q,r);
 
 void merge(int* u, int p, int q, int r)
 {
+	int n1 = q - p + 1;
+	int n2 = r - q;
+	int L[n1];
+	int R[n2];
+	int i, j, k;
+	for (i =0; i < n1; i++)
+	{
+		L[i]=A[p+i];
+	}
+	for (j = 0; j < n2; j++)
+	{
+		R[j] = A[q+j];
+	}
+	//Set inn "sentinel cards"?
+	
+	i =1;
+	j = 1;
+	for (k = p; k<r; k++)
+	{
+		if L[i] <= R[j]
+		{
+			A[k] = L[i];
+			i++;
+		} else 
+		{
 
-}
-
-
-    }
-    for (int i =1; i<len; i++)
-    {
-        for (int j= i; j > 0; j--)
-        {
-            if (u[j] < u[j-1])
-            {
-                temp=u[j-1];
-                u[j-1] = u[j];
-                u[j]=temp;
-            }
-        }
-    }
+			A[k] = R[j];
+			j++;
+		}
+	}
 }
 
 int main(int argc, char **argv) 

@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void merge(int* A, int p, int q, int r);
+void merge_sort(int* u, int p, int r);
+
+
 // Dette er merge sort.
 void merge_sort(int* u, int p, int r)
 {
@@ -14,7 +18,7 @@ merge(u, p,q,r);
 
 }
 
-void merge(int* u, int p, int q, int r)
+void merge(int* A, int p, int q, int r)
 {
 	int n1 = q - p + 1;
 	int n2 = r - q;
@@ -35,7 +39,7 @@ void merge(int* u, int p, int q, int r)
 	j = 1;
 	for (k = p; k<r; k++)
 	{
-		if L[i] <= R[j]
+		if (L[i] <= R[j])
 		{
 			A[k] = L[i];
 			i++;
@@ -59,7 +63,7 @@ int main(int argc, char **argv)
         usortert[i-1] = atoi(argv[i]);
 
     }
-    insert(usortert, n-1);
+    merge_sort(usortert, 0, n-1);
 
     for (int i =0;i<n-1;i++)
     {

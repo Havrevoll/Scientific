@@ -1,2 +1,2 @@
-merge: merge.c
-	gcc -g -o merge merge.c
+heap: heap.c
+	gcc -g -o heap heap.c

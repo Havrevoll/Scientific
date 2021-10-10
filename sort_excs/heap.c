@@ -70,7 +70,7 @@ int main(int argc, char **argv)
     }
 
     // heapsort(usortert, 0, n - 2);
-    build_max_heap(usortert, 1, 10);
+    build_max_heap(usortert, 10);
 
     for (int i = 0; i < n - 1; i++)
     {

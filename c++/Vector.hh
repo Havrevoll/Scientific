@@ -42,9 +42,19 @@ public:
      void shadow(const Vector& v,  long int i, long int len){...}
      long int getSize() const{...}
      double * getRawData() const{...}
-     double& operator()(long int i){...}
-     const double& operator()(long int i) const{.}
-     Vector& operator=(const Vector& v){...}
+     double& operator()(long int i){
+		assert(i < size);
+		return(data[i]);
+	 }
+     
+	 const double& operator()(long int i) const{.}
+     
+	 Vector& operator=(const Vector& v){
+		assert(size==v.size);
+		memcpy((char *)data, (char *)v.data, size*sizeof(double));
+		return(*this);
+	 }
+
      void add(const Vector& v){...}
      void sub(const Vector& v){...}
      void mul(const Vector& v){...}
